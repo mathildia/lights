@@ -1,0 +1,108 @@
+body {
+  background: #200804;
+  width:100vw;
+  height:100vh;
+}
+
+.lightrope {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  margin: 4% 0 0 0;
+  padding: 0;
+  pointer-events: none;
+  width: 100%;}
+
+li {
+    position: relative;
+    animation-fill-mode: both;
+    animation-iteration-count:infinite;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 2.8rem;
+    height: 7rem;
+    border-radius: 50%;
+    border:4px solid black;
+    margin: 20px;
+    display: inline-block;
+    background: rgba(215, 2, 112, 1);
+    box-shadow: 0px 5px 8px 4px rgba(215, 2, 112, 1);
+    animation-name: flash-1;
+    animation-duration: 2.8s;
+  }
+/* lavender bulbs */
+li:nth-child(even) {
+      background: rgba(115, 79, 150, 1);
+      box-shadow: 0px 5px 8px 4px rgba(115, 79, 150, 1);
+      animation-name: flash-2;
+      animation-duration: 1.3s;
+  }
+/* blue bulbs */
+li:nth-child(4n-1) {
+      background: rgba(0, 56, 168, 1);
+      box-shadow: 0px 5px 8px 4px rgba(0, 56, 168, 1);;
+      animation-name: flash-3;
+      animation-duration: 2s;
+  }
+
+/* toppers */
+li:before {
+      content: "";
+      position: absolute;
+      background: darkgreen;
+      width: 28px;
+      height: 34px;
+      border-radius: 12px;
+      top: -15.5px;
+      left: 4.955px;
+      border:4px solid black;
+  }
+/* rope */
+li:after {
+      content: "";
+      position: absolute;
+      top: -14px;
+      left: 41px;
+      width: 62px;
+      height: 8px;
+      border-bottom: solid lime 5px;
+      border-radius: 50%;
+      /* border-bottom:1px solid black; */
+  }
+
+li:last-child:after {
+      content: none;
+  }
+
+li:first-child {
+      margin-left: -40px);
+  }
+
+
+/* pink bulbs flashing */
+@keyframes flash-1 {
+    0%, 100% { background: rgba(215, 2, 112, 1);
+    box-shadow: 0px 5px 24px 4px rgba(215, 2, 112, 1);}
+    50% { background: rgba(215, 2, 112, 0.4);
+    box-shadow: 0px 5px 8px 2px rgba(0, 56, 168, 0.2);}
+}
+
+/* lavender bulbs flashing */
+@keyframes flash-2 {
+    0%, 100% { background: rgba(115, 79, 150, 1);
+    box-shadow: 0px 5px 24px 4px rgba(115, 79, 150, 1);}
+    50% { background: rgba(115, 79, 150, 0.4);
+    box-shadow: 0px 5px 8px 2px rgba(115, 79, 150, 0.2);}
+}
+
+/* blue bulbs flashing */
+@keyframes flash-3 {
+    0%, 100% { background: rgba(0, 56, 168, 1);
+    box-shadow: 0px 5px 24px 4px rgba(0, 56, 168, 1);}
+    50% { background: rgba(0, 56, 168, 0.4);
+    box-shadow: 0px 5px 8px 2px rgba(0, 56, 168, 0.2);}
+}
